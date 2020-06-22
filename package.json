@@ -1,6 +1,6 @@
 {
   "name": "ts-generate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI to generate TypeScript interfaces from source files.",
   "keywords": [
     "typescript",
