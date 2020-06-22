@@ -88,6 +88,9 @@ function extractInterface(
   const classProps = classDec
     .getProperties()
     .filter((prop) => prop.getScope() === Scope.Public);
+  const classGetAccessors = classDec
+    .getGetAccessors()
+    .filter((prop) => prop.getScope() === Scope.Public);
   const extendsType = classDec.getExtends()?.getText();
   const propertyDecs: PropertySignatureStructure[] = [];
   const importDecs: ImportDeclarationStructure[] = [];
@@ -140,6 +143,14 @@ function extractInterface(
       type: interfaceName || propName,
       hasQuestionToken: prop.hasQuestionToken(),
       isReadonly: prop.isReadonly(),
+    });
+  });
+
+  classGetAccessors.forEach(prop => {
+    propertyDecs.push({
+      kind: StructureKind.PropertySignature,
+      name: prop.getName(),
+      type: prop.getType().getText(prop)
     });
   });
 
