@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/justinlettau/ts-generate/compare/v1.1.1...v1.1.2) (2021-07-29)
+
+
+### Bug Fixes
+
+* suffix option ([8766ffb](https://github.com/justinlettau/ts-generate/commit/8766ffbe54b2917ab9f153083ac62036bcafb67c))
+
 ### [1.1.1](https://github.com/justinlettau/ts-generate/compare/v1.1.0...v1.1.1) (2021-07-29)
 
 ### Bug Fixes
