@@ -88,7 +88,11 @@ function extractInterface(
   options: ClassToInterfaceOptions
 ) {
   const className = classDec.getName() as string;
-  const interfaceName = getInterfaceName(className, options.prefix);
+  const interfaceName = getInterfaceName(
+    className,
+    options.prefix,
+    options.suffix
+  );
   const classProps = classDec
     .getProperties()
     .filter((prop) => prop.getScope() === Scope.Public);
@@ -101,7 +105,11 @@ function extractInterface(
   const extendsNames: string[] = [];
 
   if (extendsType && classes.has(extendsType)) {
-    const extendsName = getInterfaceName(extendsType, options.prefix);
+    const extendsName = getInterfaceName(
+      extendsType,
+      options.prefix,
+      options.suffix
+    );
     const path = `./${getFileName(extendsType, options.fileNameCasing)}`;
     extendsNames.push(extendsName);
 
@@ -120,12 +128,20 @@ function extractInterface(
     let interfaceName: string | undefined;
 
     if (type.isClass() && classes.has(propName)) {
-      interfaceName = getInterfaceName(propName, options.prefix);
+      interfaceName = getInterfaceName(
+        propName,
+        options.prefix,
+        options.suffix
+      );
     } else if (type.isArray()) {
       propName = type.getArrayElementType()?.getText(prop) as string;
 
       if (classes.has(propName)) {
-        interfaceName = getInterfaceName(propName, options.prefix);
+        interfaceName = getInterfaceName(
+          propName,
+          options.prefix,
+          options.suffix
+        );
       }
     }
 
