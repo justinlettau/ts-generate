@@ -45,6 +45,7 @@ Options:
 | Option             | Type     | Description                                 | Default |
 | ------------------ | -------- | ------------------------------------------- | ------- |
 | `--prefix`         | `string` | Interface name prefix.                      | n/a     |
+| `--suffix`         | `string` | Interface name suffix.                      | n/a     |
 | `--fileNameCasing` | `string` | Output file name casing.                    | n/a     |
 | `--outDir`         | `string` | Redirect output structure to the directory. | n/a     |
 
