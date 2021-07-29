@@ -3,6 +3,7 @@
  */
 export interface ClassToInterfaceOptions {
   prefix?: string;
+  suffix?: string;
   fileNameCasing?: CasingType;
   outDir?: string;
 }

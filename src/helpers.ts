@@ -26,10 +26,19 @@ export function getFileName(base: string, casing?: CasingType) {
  *
  * @param base Base interface name.
  * @param prefix Optional name prefix.
+ * @param suffix Optional name suffix.
  */
-export function getInterfaceName(base: string, prefix?: string) {
+export function getInterfaceName(
+  base: string,
+  prefix?: string,
+  suffix?: string
+) {
   if (prefix) {
-    return prefix + base;
+    base = prefix + base;
+  }
+
+  if (suffix) {
+    base = base + suffix;
   }
 
   return base;

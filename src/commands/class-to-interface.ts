@@ -32,7 +32,11 @@ export function classToInterface(
 
   for (const [className, classDec] of classes) {
     const fileName = getFileName(className, options.fileNameCasing);
-    const interfaceName = getInterfaceName(className, options.prefix);
+    const interfaceName = getInterfaceName(
+      className,
+      options.prefix,
+      options.suffix
+    );
     const dest = path.join(options.outDir || '', `${fileName}.ts`);
     const file = target.createSourceFile(dest, {}, { overwrite: true });
     const result = extractInterface(classDec, classes, options);
@@ -146,11 +150,11 @@ function extractInterface(
     });
   });
 
-  classGetAccessors.forEach(prop => {
+  classGetAccessors.forEach((prop) => {
     propertyDecs.push({
       kind: StructureKind.PropertySignature,
       name: prop.getName(),
-      type: prop.getType().getText(prop)
+      type: prop.getType().getText(prop),
     });
   });
 

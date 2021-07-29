@@ -14,6 +14,7 @@ async function bootstrap() {
     .command('class-to-interface [glob]')
     .description('Generate interfaces from existing TypeScript classes.')
     .option('--prefix [value]', 'Interface name prefix.')
+    .option('--suffix [value]', 'Interface name suffix.')
     .option('--fileNameCasing [value]', 'Output file name casing.')
     .option('--outDir [value]', 'Redirect output structure to the directory.')
     .action(classToInterface);

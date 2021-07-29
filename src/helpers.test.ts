@@ -24,7 +24,7 @@ describe('helpers', () => {
   });
 
   describe('getInterfaceName', () => {
-    test('should return base name when no prefix', () => {
+    test('should return base name when no prefix/suffix', () => {
       const result = getInterfaceName('MyClass');
       expect(result).toBe('MyClass');
     });
@@ -32,6 +32,16 @@ describe('helpers', () => {
     test('should return include prefix when present', () => {
       const result = getInterfaceName('MyClass', 'I');
       expect(result).toBe('IMyClass');
+    });
+
+    test('should return include suffix when present', () => {
+      const result = getInterfaceName('MyClass', undefined, 'End');
+      expect(result).toBe('MyClassEnd');
+    });
+
+    test('should return include prefix/suffix when present', () => {
+      const result = getInterfaceName('MyClass', 'I', 'End');
+      expect(result).toBe('IMyClassEnd');
     });
   });
 });
