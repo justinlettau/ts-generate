@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import program = require('commander');
+import { Command } from 'commander';
 import updateNotifier = require('update-notifier');
 
 import pkg = require('../package.json');
@@ -10,6 +10,8 @@ updateNotifier({ pkg } as any).notify();
 bootstrap();
 
 async function bootstrap() {
+  const program = new Command();
+
   program
     .command('class-to-interface [glob]')
     .description('Generate interfaces from existing TypeScript classes.')
