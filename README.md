@@ -1,8 +1,6 @@
 [![NPM Version](https://badge.fury.io/js/ts-generate.svg)](https://badge.fury.io/js/ts-generate)
 [![CI](https://github.com/justinlettau/ts-generate/workflows/CI/badge.svg)](https://github.com/justinlettau/ts-generate/actions)
 [![codecov](https://codecov.io/gh/justinlettau/ts-generate/branch/master/graph/badge.svg)](https://codecov.io/gh/justinlettau/ts-generate)
-[![Dependency Status](https://david-dm.org/justinlettau/ts-generate.svg)](https://david-dm.org/justinlettau/ts-generate)
-[![Dev Dependency Status](https://david-dm.org/justinlettau/ts-generate/dev-status.svg)](https://david-dm.org/justinlettau/ts-generate?type=dev)
 
 # ts-generate
 
